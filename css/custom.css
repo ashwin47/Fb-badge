@@ -1,0 +1,76 @@
+
+.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  .bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
+.row { 
+	position: relative;
+	width: 500px; 
+	margin: 50px auto; 
+	padding: 20px; 
+	background: white; 
+	-moz-box-shadow: 0 0 20px black; 
+	-webkit-box-shadow: 0 0 20px black; 
+	box-shadow: 0 0 20px black; 
+}
+
+.header{
+	text-align: center;
+}
+}
+
+
+
+img.profile{
+
+	display:block;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/*background: url(../images/modi.jpg) no-repeat center/75%;*/
+	width: 320px; /* Width of new image */
+	height: 380px; /* Height of new image */
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 28px;
+}
+
+a .button{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.footer{
+	margin-top: 20px;
+	float: right;
+}
+
+
+ul.share-buttons li{
+  display: inline;
+
+}
+ul.share-buttons{
+	
+	padding:10px;
+	margin: 0 auto;
+}
