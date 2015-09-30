@@ -45,13 +45,13 @@
       <div class="row">
         
         <div class="header">
-          <h1>Show your support for Net Neutralty</h1>
+          <h1>Show your support for Net Neutrality</h1>
           <img class="profile" src="images/mark.jpg"/>
         </div>
         <div class="content">
         <br/>
         <p>Show your support for Net Neutrality by changing facebook profile picture. </p>
-        
+        <p>(It will not automatically change you picture)</p>
       
         
           <a class="button button-primary" href=<?php echo htmlspecialchars($loginUrl)?> > Change my Facebook picture </a>

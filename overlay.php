@@ -129,7 +129,7 @@
   </head>
   <body>
   <?php include_once("analyticstracking.php") ?>
-	<img src="/images/bg1.jpg" class="bg">
+	<img src="/images/bg2.jpg" class="bg">
     <div class="container">
 	    <div class="row">
 	      
@@ -138,9 +138,11 @@
 	        <img class="profile" src=<?php echo $path ?> alt="">
 	      </div>
 	      <div class="content">
-	      <p>Facebook is currently reviewing this App's request to permit updating of profile picture,
-	      For the time being 'Right Click -> 'Save Image As' and manually update </p>
-	    <br/>
+	       <br/>
+	      <p id="alert">Facebook is currently reviewing this App's request to permit updating of profile picture,
+	      
+	      For now 'Right Click -> 'Save Image As' and manually update </p>
+	   
 	      Spread the word:
 	        <ul class="share-buttons">
 			  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisupportnetneutrality.in%2F&t=Show%20your%20support%20for%20Net%20Neutralty" title="Share on Facebook" target="_blank"><img src="images/simple_icons_black/Facebook.png"></a></li>
