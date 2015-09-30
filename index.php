@@ -39,6 +39,7 @@
     <![endif]-->
   </head>
   <body>
+    <?php include_once("analyticstracking.php") ?>
     <img src=<?php echo $bg_path?> class="bg">
     <div class="container">
       <div class="row">
@@ -49,7 +50,8 @@
         </div>
         <div class="content">
         <br/>
-        <p>Show our support for Net Neutrality by changing our facebook profile picture </p>
+        <p>Show your support for Net Neutrality by changing facebook profile picture. </p>
+        
       
         
           <a class="button button-primary" href=<?php echo htmlspecialchars($loginUrl)?> > Change my Facebook picture </a>
