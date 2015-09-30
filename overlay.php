@@ -1,6 +1,9 @@
 #overlay
 <?php 
 	require( __DIR__.'/facebook_start.php' );
+	
+	//Selecting a random image 
+ 
 
 	$token = $_SESSION['facebook_access_token'];
    	//$r = new HttpRequest('https://graph.facebook.com/me?access_token='.$r, HttpRequest::METH_POST);
@@ -50,21 +53,22 @@
 	function create($id, $path){
 
 	    // base image is just a transparent png in the same size as the input image
-		$base_image = imagecreatefrompng("images/fbimage-template.png");
+		$base_image = imagecreatefrompng("images/template320.png");
 	    // Get the facebook profile image in 200x200 pixels
-		$photo = imagecreatefromjpeg("http://graph.facebook.com/".$id."/picture?width=920&height=920");
+		$photo = imagecreatefromjpeg("http://graph.facebook.com/".$id."/picture?width=320&height=320");
 		//$photo = imagecreatefromjpeg("http://graph.facebook.com/".$id."/picture?width=200&height=200");
-		
+
+		//resizeImage($photo,920,920);
 	    // read overlay  
-		$overlay = imagecreatefrompng("images/fbimage-overlay.png");
+		$overlay = imagecreatefrompng("images/overlay320.png");
 	    // keep transparency of base image
 		imagesavealpha($base_image, true);
 		imagealphablending($base_image, true);
 	    // place photo onto base (reading all of the photo and pasting unto all of the base)
-		imagecopyresampled($base_image, $photo, 0, 0, 0, 0, 200, 200, 200, 200);
+		imagecopyresampled($base_image, $photo, 0, 0, 0, 0, 320, 320, 320, 320);
 		
 	    // place overlay on top of base and photo
-		imagecopy($base_image, $overlay, 0, 0, 0, 0, 200, 200);
+		imagecopy($base_image, $overlay, 0, 0, 0, 0, 320, 320);
 	    // Save as jpeg
 		imagejpeg($base_image, $path);
 	}
@@ -75,8 +79,10 @@
 		$image = [
 		  'caption' => 'Created using http://isupportnetneutrality.in/',
 		  'source' => $fb->fileToUpload($path),
-		  'is_silhouette' => true,
+		  
 		];
+
+	
 
 		try {
 		  // Returns a `Facebook\FacebookResponse` object
@@ -121,7 +127,7 @@
     <![endif]-->
   </head>
   <body>
-<img src="images/bg2.jpg" class="bg">
+<img src="images/bg1.jpg" class="bg">
     <div class="container">
 	    <div class="row">
 	      
@@ -132,16 +138,19 @@
 	      <div class="content">
 	      <p></p>
 	    
-	      
-	        <a class="button button-primary" href=<?php echo htmlspecialchars($loginUrl)?> > Log in with Facebook </a>
+	      Spread the word:
+	        <ul class="share-buttons">
+			  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisupportnetneutrality.in%2F&t=Show%20your%20support%20for%20Net%20Neutralty" title="Share on Facebook" target="_blank"><img src="images/simple_icons_black/Facebook.png"></a></li>
+			  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fisupportnetneutrality.in%2F&text=Show%20your%20support%20for%20Net%20Neutralty:%20http%3A%2F%2Fisupportnetneutrality.in%2F&via=ashwinm" target="_blank" title="Tweet"><img src="images/simple_icons_black/Twitter.png"></a></li>
+			  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fisupportnetneutrality.in%2F&title=Show%20your%20support%20for%20Net%20Neutralty" target="_blank" title="Submit to Reddit"><img src="images/simple_icons_black/Reddit.png"></a></li>
+			  <li><a href="mailto:?subject=Show%20your%20support%20for%20Net%20Neutralty&body=Let%20us%20show%20our%20support%20for%20Net%20Neutrality%20by%20changing%20our%20facebook%20profile%20picture:%20http%3A%2F%2Fisupportnetneutrality.in%2F" target="_blank" title="Email"><img src="images/simple_icons_black/Email.png"></a></li>
+			</ul>
 	      
 	      </div>
-	      <footer class="footer">Made by <a href="http://twitter.com/ashwinm">@ashwinm</a> </footer>
+	      <div class="footer"><a href='https://github.com/ashwin47/Net-Neutral'>Made</a> by <a href="http://twitter.com/ashwinm">@ashwinm</a> </div>
 	    </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
     
   </body>
 </html>

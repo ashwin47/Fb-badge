@@ -1,17 +1,19 @@
 <?php
 
   require( __DIR__.'/facebook_start.php' );
+  //  require( __DIR__.'/resize.php' );
   $helper = $fb->getRedirectLoginHelper();
  
   $permissions = ['email', 'user_posts','publish_actions']; // optional
-  $callback    = 'http://localhost/net-neutral/login.php';
+  $callback    = 'http://isupportnetneutrality.in/login.php';
   $loginUrl    = $helper->getLoginUrl($callback, $permissions);
 
   //Selecting a random image 
-  $bg=['images/bg1.jpeg','images/bg2.jpg'];
+  $bg=['images/bg1.jpeg','images/bg2.jpg','images/bg3.jpg','images/bg4.jpg','images/bg5.jpg'];
   $bg_path=$bg[array_rand($bg)];
   //debug_to_console($bg_path));
-?>
+
+  ?>
 
 
 <!DOCTYPE html>
@@ -43,30 +45,28 @@
         
         <div class="header">
           <h1>Show your support for Net Neutralty</h1>
-          <img class="profile" src= alt="images/modi.jpg">
+          <img class="profile" src="images/mark.jpg"/>
         </div>
         <div class="content">
-        <p>Let us show our support for Net Neutrality by changing our facebook profile picture </p>
+        <br/>
+        <p>Show our support for Net Neutrality by changing our facebook profile picture </p>
       
         
-          <a class="button button-primary" href=<?php echo htmlspecialchars($loginUrl)?> > Log in with Facebook </a>
+          <a class="button button-primary" href=<?php echo htmlspecialchars($loginUrl)?> > Change my Facebook picture </a>
 
 
         
         
         </div>
         <ul class="share-buttons">
-            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisupportnetneutrality.in%2F&t=" title="Share on Facebook" target="_blank"><img src="images/simple_icons_black/Facebook.png"></a></li>
-            <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fisupportnetneutrality.in%2F&text=:%20http%3A%2F%2Fisupportnetneutrality.in%2F" target="_blank" title="Tweet"><img src="images/simple_icons_black/Twitter.png"></a></li>
-            <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fisupportnetneutrality.in%2F&title=" target="_blank" title="Submit to Reddit"><img src="images/simple_icons_black/Reddit.png"></a></li>
-            <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Fisupportnetneutrality.in%2F" target="_blank" title="Email"><img src="images/simple_icons_black/Email.png"></a></li>
-          </ul>
-        <footer class="footer">Made by <a href="http://twitter.com/ashwinm">@ashwinm</a> </footer>
+          <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisupportnetneutrality.in%2F&t=Show%20your%20support%20for%20Net%20Neutralty" title="Share on Facebook" target="_blank"><img src="images/simple_icons_black/Facebook.png"></a></li>
+          <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fisupportnetneutrality.in%2F&text=Show%20your%20support%20for%20Net%20Neutralty:%20http%3A%2F%2Fisupportnetneutrality.in%2F&via=ashwinm" target="_blank" title="Tweet"><img src="images/simple_icons_black/Twitter.png"></a></li>
+          <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fisupportnetneutrality.in%2F&title=Show%20your%20support%20for%20Net%20Neutralty" target="_blank" title="Submit to Reddit"><img src="images/simple_icons_black/Reddit.png"></a></li>
+          <li><a href="mailto:?subject=Show%20your%20support%20for%20Net%20Neutralty&body=Let%20us%20show%20our%20support%20for%20Net%20Neutrality%20by%20changing%20our%20facebook%20profile%20picture:%20http%3A%2F%2Fisupportnetneutrality.in%2F" target="_blank" title="Email"><img src="images/simple_icons_black/Email.png"></a></li>
+        </ul>
+        <footer class="footer"><a href='https://github.com/ashwin47/Net-Neutral'>Made</a> by <a href="http://twitter.com/ashwinm">@ashwinm</a> </footer>
       </div>
     </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
     
   </body>
 </html>

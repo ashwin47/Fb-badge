@@ -30,12 +30,15 @@
 	-moz-box-shadow: 0 0 20px black; 
 	-webkit-box-shadow: 0 0 20px black; 
 	box-shadow: 0 0 20px black; 
+	text-align: center;
+
 }
 
 .header{
 	text-align: center;
+	
 }
-}
+
 
 
 
@@ -45,23 +48,29 @@ img.profile{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	/*background: url(../images/modi.jpg) no-repeat center/75%;*/
-	width: 320px; /* Width of new image */
+	width: 380px; /* Width of new image */
 	height: 380px; /* Height of new image */
 	margin: 0 auto;
+	-moz-box-shadow: 0 0 10px black; 
+	-webkit-box-shadow: 0 0 10px black; 
+	box-shadow: 0 0 10px black; 
 }
 
 h1 {
 	font-size: 28px;
+	font-weight: bold;
 }
 
 a .button{
 	margin: 0 auto;
-	text-align: center;
+	
 }
 
 .footer{
 	margin-top: 20px;
 	float: right;
+	text-decoration: none;
+
 }
 
 
@@ -70,7 +79,7 @@ ul.share-buttons li{
 
 }
 ul.share-buttons{
-	
+
 	padding:10px;
 	margin: 0 auto;
 }
