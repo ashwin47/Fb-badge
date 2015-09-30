@@ -1,0 +1,4 @@
+<?php
+$_YOUR_APP_ID = 'POPDA';
+$_YOUR_APP_SECRET = 'PAPPU';
+?>

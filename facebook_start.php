@@ -4,6 +4,7 @@
   session_start();
   //require_once '/src/facebook/autoload.php';
   require( __DIR__.'/Facebook/autoload.php' );
+  require( __DIR__.'/cred.php' );
   # Facebook PHP SDK v5: Check Login Status Example
  
 // // Choose your app context helper
@@ -31,9 +32,9 @@
 //   }
   /* Create our Application instance (replace this with your appId and secret). */
 $fb = new Facebook\Facebook(array(
-  'app_id'                => 'YOUR_APP_ID',
-  'app_secret'            => 'YOUR_APP_SECRET',
-  'default_graph_version' => 'v2.3',
+  'app_id'                => $_YOUR_APP_ID,
+  'app_secret'            => $_YOUR_APP_SECRET,
+  'default_graph_version' => '$v2.3',
   ));
 function debug_to_console($data) {
     if(is_array($data) || is_object($data))
