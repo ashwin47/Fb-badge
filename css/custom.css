@@ -47,7 +47,7 @@ img.profile{
 	display:block;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	/*background: url(../images/modi.jpg) no-repeat center/75%;*/
+	
 	width: 380px; /* Width of new image */
 	height: 380px; /* Height of new image */
 	margin: 0 auto;
@@ -68,8 +68,9 @@ a .button{
 
 .footer{
 	margin-top: 20px;
-	float: right;
+	
 	text-decoration: none;
+	text-align: right;
 
 }
 
@@ -84,5 +85,8 @@ ul.share-buttons{
 	margin: 0 auto;
 }
 p{
-	text-align: left;
+	/*text-align: left;*/
+}
+div.pp{
+	float: left;
 }

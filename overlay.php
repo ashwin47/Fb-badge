@@ -2,17 +2,17 @@
 <?php 
 	require( __DIR__.'/facebook_start.php' );
 	
-	//Selecting a random image 
- 
-
 	$token = $_SESSION['facebook_access_token'];
    	//$r = new HttpRequest('https://graph.facebook.com/me?access_token='.$r, HttpRequest::METH_POST);
 
 	$output = curly($token);
 	echo $output;
 	$r=json_decode($output, true); //To Array
+	//$r = array('id' => "1011197735591770");
 	$id= $r['id'];
+	
 	$path = "cache/".$id.".jpg";
+	$_SESSION['path'] = $path;
 	// only create if not already exists in cache
 	if (!file_exists($path)){	
 		create($id, $path);
@@ -73,36 +73,6 @@
 	    // Save as jpeg
 		imagejpeg($base_image, $path);
 	}
-
-	//Upload image
-	function upload($path,$token,$fb)
-	{
-		$image = [
-		  'caption' => 'Created using http://isupportnetneutrality.in/',
-		  'source' => $fb->fileToUpload($path),
-		  
-		];
-
-	
-
-		try {
-		  // Returns a `Facebook\FacebookResponse` object
-		  $response = $fb->post('/me/photos', $image, $token);
-		} catch(Facebook\Exceptions\FacebookResponseException $e) {
-		  echo 'Graph returned an error: ' . $e->getMessage();
-		  exit;
-		} catch(Facebook\Exceptions\FacebookSDKException $e) {
-		  echo 'Facebook SDK returned an error: ' . $e->getMessage();
-		  exit;
-		}
-
-		$graphNode = $response->getGraphNode();
-
-		print_r($graphNode);
-		echo " \n Photo ID: " . $graphNode['id'];
-	}
-
-	session_write_close();
 	?>
 
 <!DOCTYPE html>
@@ -113,7 +83,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Show your support for Net Neutralty | Success </title>
+    <title>Show your support for Net Neutralty | Update </title>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
@@ -129,20 +99,23 @@
   </head>
   <body>
   <?php include_once("analyticstracking.php") ?>
-	<img src="/images/bg2.jpg" class="bg">
+	<img src=<?php echo $bg_path?> class="bg">
     <div class="container">
 	    <div class="row">
 	      
 	      <div class="header">
-	      	<h1>Thank you for your support!</h1>
+	      	<h1>You new profile picture is ready !</h1>
 	        <img class="profile" src=<?php echo $path ?> alt="">
 	      </div>
 	      <div class="content">
 	       <br/>
-	      <p id="alert">Facebook is currently reviewing this App's request to permit updating of profile picture,
-	      
-	      For now 'Right Click -> 'Save Image As' and manually update </p>
-	   
+
+	  	<form action="update.php" method='post'>
+	   	 <label for="update" >Status</label>
+		  <textarea class="u-full-width" placeholder="" name="text"></textarea>
+		  <input class="button-primary" value="Update" type="submit">
+		</form>
+
 	      Spread the word:
 	        <ul class="share-buttons">
 			  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisupportnetneutrality.in%2F&t=Show%20your%20support%20for%20Net%20Neutralty" title="Share on Facebook" target="_blank"><img src="images/simple_icons_black/Facebook.png"></a></li>
