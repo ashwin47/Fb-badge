@@ -13,6 +13,7 @@
 	$r=json_decode($output, true); //To Array
 	$id= $r['id'];
 	$path = "cache/".$id.".jpg";
+	$_SESSION['path']=$path;
 	// only create if not already exists in cache
 	if (!file_exists($path)){	
 		create($id, $path);
@@ -61,7 +62,7 @@
 
 		//resizeImage($photo,920,920);
 	    // read overlay  
-		$overlay = imagecreatefrompng("images/overlay320.png");
+		$overlay = imagecreatefrompng("images/overlay320n.png");
 	    // keep transparency of base image
 		imagesavealpha($base_image, true);
 		imagealphablending($base_image, true);
@@ -74,35 +75,8 @@
 		imagejpeg($base_image, $path);
 	}
 
-	//Upload image
-	function upload($path,$token,$fb)
-	{
-		$image = [
-		  'caption' => 'Created using http://isupportnetneutrality.in/',
-		  'source' => $fb->fileToUpload($path),
-		  
-		];
 
 	
-
-		try {
-		  // Returns a `Facebook\FacebookResponse` object
-		  $response = $fb->post('/me/photos', $image, $token);
-		} catch(Facebook\Exceptions\FacebookResponseException $e) {
-		  echo 'Graph returned an error: ' . $e->getMessage();
-		  exit;
-		} catch(Facebook\Exceptions\FacebookSDKException $e) {
-		  echo 'Facebook SDK returned an error: ' . $e->getMessage();
-		  exit;
-		}
-
-		$graphNode = $response->getGraphNode();
-
-		print_r($graphNode);
-		echo " \n Photo ID: " . $graphNode['id'];
-	}
-
-	session_write_close();
 	?>
 
 <!DOCTYPE html>
@@ -134,14 +108,17 @@
 	    <div class="row">
 	      
 	      <div class="header">
-	      	<h1>Thank you for your support!</h1>
+	      	<h1>Your new profile picture is ready !</h1>
 	        <img class="profile" src=<?php echo $path ?> alt="">
 	      </div>
 	      <div class="content">
 	       <br/>
-	      <p id="alert">Facebook is currently reviewing this App's request to permit updating of profile picture,
-	      
-	      For now 'Right Click -> 'Save Image As' and manually update </p>
+	       <form action="update.php" method="post">
+	      		<label>Status</label>
+				<textarea class="u-full-width" placeholder="#SaveTheInternet" id="exampleMessage" name="text"></textarea>
+			  	<input class="button-primary" value="Update" type="submit">
+			</form>
+	
 	   
 	      Spread the word:
 	        <ul class="share-buttons">
