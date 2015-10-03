@@ -47,21 +47,10 @@
         </div>
         <div class="content">
         <br/>
-<<<<<<< HEAD
-        <p>Show your support for Net Neutrality by changing facebook profile picture. </p>
-=======
-        <p>Show your support for Net Neutrality by updating your facebook picture. </p>
-        <p>(It will not automatically change you picture)</p>
-      
-        
+        <p>Show your support for Net Neutrality by updating your facebook picture. </p>       
           <a class="button button-primary" href=<?php echo htmlspecialchars($loginUrl);?> > Log in to Facebook </a> 
-
-
-        
->>>>>>> update
-        
-          <a class="button button-primary" href=<?php echo htmlspecialchars($loginUrl)?> > Log in to Facebook </a>
-        </div>
+       
+       </div>
         <ul class="share-buttons">
           <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisupportnetneutrality.in%2F&t=Show%20your%20support%20for%20Net%20Neutralty" title="Share on Facebook" target="_blank"><img src="images/simple_icons_black/Facebook.png"></a></li>
           <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fisupportnetneutrality.in%2F&text=Show%20your%20support%20for%20Net%20Neutralty:%20http%3A%2F%2Fisupportnetneutrality.in%2F&via=ashwinm" target="_blank" title="Tweet"><img src="images/simple_icons_black/Twitter.png"></a></li>

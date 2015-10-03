@@ -12,11 +12,8 @@
 	$id= $r['id'];
 	
 	$path = "cache/".$id.".jpg";
-<<<<<<< HEAD
-	$_SESSION['path']=$path;
-=======
+
 	$_SESSION['path'] = $path;
->>>>>>> update
 	// only create if not already exists in cache
 	if (!file_exists($path)){	
 		create($id, $path);
@@ -77,12 +74,7 @@
 	    // Save as jpeg
 		imagejpeg($base_image, $path);
 	}
-<<<<<<< HEAD
 
-
-	
-=======
->>>>>>> update
 	?>
 
 <!DOCTYPE html>
@@ -114,32 +106,17 @@
 	    <div class="row">
 	      
 	      <div class="header">
-<<<<<<< HEAD
-	      	<h1>Your new profile picture is ready !</h1>
-=======
 	      	<h1>You new profile picture is ready !</h1>
->>>>>>> update
 	        <img class="profile" src=<?php echo $path ?> alt="">
 	      </div>
 	      <div class="content">
 	       <br/>
-<<<<<<< HEAD
-	       <form action="update.php" method="post">
-	      		<label>Status</label>
-				<textarea class="u-full-width" placeholder="#SaveTheInternet" id="exampleMessage" name="text"></textarea>
-			  	<input class="button-primary" value="Update" type="submit">
-			</form>
-	
-	   
-=======
-
 	  	<form action="update.php" method='post'>
 	   	 <label for="update" >Status</label>
 		  <textarea class="u-full-width" placeholder="" name="text"></textarea>
 		  <input class="button-primary" value="Update" type="submit">
 		</form>
 
->>>>>>> update
 	      Spread the word:
 	        <ul class="share-buttons">
 			  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisupportnetneutrality.in%2F&t=Show%20your%20support%20for%20Net%20Neutralty" title="Share on Facebook" target="_blank"><img src="images/simple_icons_black/Facebook.png"></a></li>
