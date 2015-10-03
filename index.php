@@ -1,17 +1,14 @@
 <?php
 
   require( __DIR__.'/facebook_start.php' );
-  //  require( __DIR__.'/resize.php' );
+ 
   $helper = $fb->getRedirectLoginHelper();
  
   $permissions = ['email', 'user_posts','publish_actions']; // optional
   $callback    = 'http://isupportnetneutrality.in/login.php';
   $loginUrl    = $helper->getLoginUrl($callback, $permissions);
 
-  //Selecting a random image 
-  $bg=['images/bg1.jpeg','images/bg2.jpg','images/bg3.jpg','images/bg4.jpg','images/bg5.jpg'];
-  $bg_path=$bg[array_rand($bg)];
-  //debug_to_console($bg_path));
+ 
 
   ?>
 
@@ -50,7 +47,18 @@
         </div>
         <div class="content">
         <br/>
+<<<<<<< HEAD
         <p>Show your support for Net Neutrality by changing facebook profile picture. </p>
+=======
+        <p>Show your support for Net Neutrality by updating your facebook picture. </p>
+        <p>(It will not automatically change you picture)</p>
+      
+        
+          <a class="button button-primary" href=<?php echo htmlspecialchars($loginUrl);?> > Log in to Facebook </a> 
+
+
+        
+>>>>>>> update
         
           <a class="button button-primary" href=<?php echo htmlspecialchars($loginUrl)?> > Log in to Facebook </a>
         </div>
@@ -60,7 +68,11 @@
           <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fisupportnetneutrality.in%2F&title=Show%20your%20support%20for%20Net%20Neutralty" target="_blank" title="Submit to Reddit"><img src="images/simple_icons_black/Reddit.png"></a></li>
           <li><a href="mailto:?subject=Show%20your%20support%20for%20Net%20Neutralty&body=Let%20us%20show%20our%20support%20for%20Net%20Neutrality%20by%20changing%20our%20facebook%20profile%20picture:%20http%3A%2F%2Fisupportnetneutrality.in%2F" target="_blank" title="Email"><img src="images/simple_icons_black/Email.png"></a></li>
         </ul>
-        <footer class="footer"><a href='https://github.com/ashwin47/Net-Neutral'>Made</a> by <a href="http://twitter.com/ashwinm">@ashwinm</a> </footer>
+        <footer class="footer">
+        <div class="pp"><a href="privacy-policy.html">Privacy policy</a></div>
+        <a href='https://github.com/ashwin47/Net-Neutral'>Made</a> by <a href="http://twitter.com/ashwinm">@ashwinm</a>
+        </footer>
+
       </div>
     </div>
     
