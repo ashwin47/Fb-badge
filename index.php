@@ -43,7 +43,7 @@
         
         <div class="header">
           <h1>Show your support for Net Neutrality</h1>
-          <img class="profile" src="images/modi.jpg"/>
+          <img class="profile" src="images/arjun.jpg"/>
         </div>
         <div class="content">
         <br/>

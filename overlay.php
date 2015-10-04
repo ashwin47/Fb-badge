@@ -7,12 +7,9 @@
 
 	$output = curly($token);
 	echo $output;
-	$r=json_decode($output, true); //To Array
-	//$r = array('id' => "1011197735591770");
+	$r=json_decode($output, true);
 	$id= $r['id'];
-	
 	$path = "cache/".$id.".jpg";
-
 	$_SESSION['path'] = $path;
 	// only create if not already exists in cache
 	if (!file_exists($path)){	
@@ -112,7 +109,7 @@
 	      <div class="content">
 	       <br/>
 	  	<form action="update.php" method='post'>
-	   	 <label for="update" >Status</label>
+	   	 <label for="update" >Status:</label>
 		  <textarea class="u-full-width" placeholder="" name="text"></textarea>
 		  <input class="button-primary" value="Update" type="submit">
 		</form>

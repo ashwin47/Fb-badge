@@ -4,8 +4,6 @@ $text = htmlspecialchars($_POST['text']);
 //echo $text;
 $token = $_SESSION['facebook_access_token'];
 var_dump($_SESSION['path']);
-
-
 $path = $_SESSION['path'];
 var_dump($path);
 //Upload image
