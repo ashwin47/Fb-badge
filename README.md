@@ -24,5 +24,8 @@ sudo apt-get install curl
 ```
 
 # Screenshots
+![](http://i.imgur.com/g9EDY8n.png)
 
+![](http://i.imgur.com/MIKC0ut.png)
 
+![](http://i.imgur.com/hoYn7LD.png)
