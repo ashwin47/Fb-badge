@@ -1,5 +1,5 @@
 # Net-Neutral
-Facebook profile picture overlay creater.
+Facebook profile picture overlay creator.
 http://isupportnetneutrality.in/
 
 # Description
