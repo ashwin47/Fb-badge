@@ -1,14 +1,13 @@
 <?php
 
   require( __DIR__.'/facebook_start.php' );
+  require( __DIR__.'/cred.php' );
  
   $helper = $fb->getRedirectLoginHelper();
  
   $permissions = ['email', 'user_posts','publish_actions']; // optional
-  $callback    = 'http://isupportnetneutrality.in/login.php';
+  #$callback_url    = 'http://isupportnetneutrality.in/login.php';
   $loginUrl    = $helper->getLoginUrl($callback, $permissions);
-
- 
 
   ?>
 
@@ -36,7 +35,6 @@
     <![endif]-->
   </head>
   <body>
-    <?php include_once("analyticstracking.php") ?>
     <img src=<?php echo $bg_path?> class="bg">
     <div class="container">
       <div class="row">

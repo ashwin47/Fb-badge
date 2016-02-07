@@ -14,6 +14,7 @@ Please add a file named `cred.php` to the folder and add the following lines in 
 <?php
 $_YOUR_APP_ID = 'XYZ';
 $_YOUR_APP_SECRET = 'XYZ';
+$callback_url = '';// example.com/login.php
 ?>
 ```
 
@@ -22,6 +23,8 @@ Install curl
 ```
 sudo apt-get install curl
 ```
+
+Remember to fill 'App domains' , 'Site URL' , 'Valid OAuth redirect URIs' accordingly.
 
 # Screenshots
 ![](http://i.imgur.com/g9EDY8n.png)
