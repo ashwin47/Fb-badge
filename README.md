@@ -1,5 +1,6 @@
-# Net-Neutral
-Facebook profile picture overlay creator.
+# Fb-badge
+
+Facebook profile picture badge creator.
 http://isupportnetneutrality.in/
 
 # Description
