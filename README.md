@@ -24,10 +24,12 @@ $callback_url = '';  // example.com/login.php
 sudo apt-get install curl
 ```
 
-3. Make a facebook app and submit for "publis_actions" approvals for uploading pictures and feed poting.
+3. Make a facebook app and submit for "publish_actions" approvals for uploading pictures and feed poting.
 
 
 4. Make sure you fill 'App domains' , 'Site URL' , 'Valid OAuth redirect URIs' accordingly in the app settings.
+
+Note : If you are getting error during facebook login it's becauses of problems in app config.
 
 # Screenshots
 ![](http://i.imgur.com/g9EDY8n.png)
