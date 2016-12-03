@@ -8,7 +8,7 @@ It downloads user's profile picture and paste an overlay image on it and present
 # Installation
 It uses Facebook_SDK_v4 for authentication and uploads.
 
-1. Please add a file named `cred.php` to the folder and add the following lines in them:
+> Please add a file named `cred.php` to the folder and add the following lines in them:
 
 ```
 <?php
@@ -18,16 +18,16 @@ $callback_url = '';  // example.com/login.php
 ?>
 ```
 
-2. Install curl
+> Install curl
 
 ```
 sudo apt-get install curl
 ```
 
-3. Make a facebook app and submit for "publish_actions" approvals for uploading pictures and feed poting.
+> Make a facebook app and submit for "publish_actions" approvals for uploading pictures and feed poting.
 
 
-4. Make sure you fill 'App domains' , 'Site URL' , 'Valid OAuth redirect URIs' accordingly in the app settings.
+> Make sure you fill 'App domains' , 'Site URL' , 'Valid OAuth redirect URIs' accordingly in the app settings.
 
 Note : If you are getting error during facebook login it's becauses of problems in app config.
 
