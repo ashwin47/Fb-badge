@@ -10,6 +10,7 @@
     'default_graph_version' => '$v2.3',
     ));
 
+  $bg_path = "images/bg1.jpeg";
 
   function debug_to_console($data) {
       if(is_array($data) || is_object($data))
