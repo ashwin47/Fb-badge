@@ -1,14 +1,13 @@
 <?php
 
   require( __DIR__.'/facebook_start.php' );
+  require( __DIR__.'/cred.php' );
  
   $helper = $fb->getRedirectLoginHelper();
  
   $permissions = ['email', 'user_posts','publish_actions']; // optional
-  $callback    = 'http://isupportnetneutrality.in/login.php';
-  $loginUrl    = $helper->getLoginUrl($callback, $permissions);
-
- 
+  // $callback_url    = 'http://isupportnetneutrality.in/login.php'; // Define this in crud.php
+  $loginUrl    = $helper->getLoginUrl($callback_url, $permissions);
 
   ?>
 
@@ -36,27 +35,20 @@
     <![endif]-->
   </head>
   <body>
-    <?php include_once("analyticstracking.php") ?>
     <img src=<?php echo $bg_path?> class="bg">
     <div class="container">
       <div class="row">
         
         <div class="header">
           <h1>Show your support for Net Neutrality</h1>
-          <img class="profile" src="images/modi.jpg"/>
+          <img class="profile" src="images/arjun.jpg"/>
         </div>
         <div class="content">
         <br/>
-        <p>Show your support for Net Neutrality by updating your facebook picture. </p>
-        <p>(It will not automatically change you picture)</p>
-      
-        
+        <p>Show your support for Net Neutrality by updating your facebook picture. </p>       
           <a class="button button-primary" href=<?php echo htmlspecialchars($loginUrl);?> > Log in to Facebook </a> 
-
-
-        
-        
-        </div>
+       
+       </div>
         <ul class="share-buttons">
           <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fisupportnetneutrality.in%2F&t=Show%20your%20support%20for%20Net%20Neutralty" title="Share on Facebook" target="_blank"><img src="images/simple_icons_black/Facebook.png"></a></li>
           <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fisupportnetneutrality.in%2F&text=Show%20your%20support%20for%20Net%20Neutralty:%20http%3A%2F%2Fisupportnetneutrality.in%2F&via=ashwinm" target="_blank" title="Tweet"><img src="images/simple_icons_black/Twitter.png"></a></li>

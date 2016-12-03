@@ -7,10 +7,8 @@
 
 	$output = curly($token);
 	echo $output;
-	$r=json_decode($output, true); //To Array
-	//$r = array('id' => "1011197735591770");
+	$r=json_decode($output, true);
 	$id= $r['id'];
-	
 	$path = "cache/".$id.".jpg";
 	$_SESSION['path'] = $path;
 	// only create if not already exists in cache
@@ -61,7 +59,7 @@
 
 		//resizeImage($photo,920,920);
 	    // read overlay  
-		$overlay = imagecreatefrompng("images/overlay320.png");
+		$overlay = imagecreatefrompng("images/overlay320n.png");
 	    // keep transparency of base image
 		imagesavealpha($base_image, true);
 		imagealphablending($base_image, true);
@@ -73,6 +71,7 @@
 	    // Save as jpeg
 		imagejpeg($base_image, $path);
 	}
+
 	?>
 
 <!DOCTYPE html>
@@ -98,7 +97,6 @@
     <![endif]-->
   </head>
   <body>
-  <?php include_once("analyticstracking.php") ?>
 	<img src=<?php echo $bg_path?> class="bg">
     <div class="container">
 	    <div class="row">
@@ -109,9 +107,8 @@
 	      </div>
 	      <div class="content">
 	       <br/>
-
 	  	<form action="update.php" method='post'>
-	   	 <label for="update" >Status</label>
+	   	 <label for="update" >Status:</label>
 		  <textarea class="u-full-width" placeholder="" name="text"></textarea>
 		  <input class="button-primary" value="Update" type="submit">
 		</form>
