@@ -1,7 +1,8 @@
 # Fb-badge
 
 Facebook profile picture badge creator.
-http://isupportnetneutrality.in/
+
+Demo : http://isupportnetneutrality.in/
 
 # Description
 It downloads user's profile picture and paste an overlay image on it and presents an option to update it to his facebook feed. Facebook does not allow make it profile picture automatically.
@@ -38,5 +39,7 @@ Note : If you are getting error during facebook login it's becauses of problems 
 ![](http://i.imgur.com/MIKC0ut.png)
 
 ![](http://i.imgur.com/hoYn7LD.png)
+
+App permissions :
 
 ![](http://i.imgur.com/URrUWOO.png)
