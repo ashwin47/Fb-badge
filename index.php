@@ -6,8 +6,8 @@
   $helper = $fb->getRedirectLoginHelper();
  
   $permissions = ['email', 'user_posts','publish_actions']; // optional
-  #$callback_url    = 'http://isupportnetneutrality.in/login.php';
-  $loginUrl    = $helper->getLoginUrl($callback, $permissions);
+  // $callback_url    = 'http://isupportnetneutrality.in/login.php'; // Define this in crud.php
+  $loginUrl    = $helper->getLoginUrl($callback_url, $permissions);
 
   ?>
 
