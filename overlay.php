@@ -97,7 +97,6 @@
     <![endif]-->
   </head>
   <body>
-  <?php include_once("analyticstracking.php") ?>
 	<img src=<?php echo $bg_path?> class="bg">
     <div class="container">
 	    <div class="row">
